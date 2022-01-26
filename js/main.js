@@ -47,10 +47,53 @@ photoContainer.innerHTML = image;
 let itemsContainer = document.querySelector('.items-container');
 itemsContainer.innerHTML = thumbnail;
 
-let currentPhoto = 1;
+let currentPhoto = 0;
 
 let photo = document.getElementsByClassName('photo');
-photo[1].classList.add('active');
+photo[currentPhoto].classList.add('active');
 
 let photoSmall = document.getElementsByClassName('item');
-photoSmall[1].classList.add('active');
+photoSmall[currentPhoto].classList.add('active');
+
+let arrowUp = document.querySelector('.arrow-up');
+let arrowDown = document.querySelector('.arrow-down');
+
+
+arrowUp.addEventListener('click',
+    function() {
+        if (currentPhoto != 0) {
+            photo[currentPhoto].classList.remove('active');
+            photoSmall[currentPhoto].classList.remove('active');
+            currentPhoto = currentPhoto - 1;
+            photo[currentPhoto].classList.add('active');
+            photoSmall[currentPhoto].classList.add('active');
+        } else {
+            photo[currentPhoto].classList.remove('active');
+            photoSmall[currentPhoto].classList.remove('active');
+            currentPhoto = 4;
+            photo[currentPhoto].classList.add('active');
+            photoSmall[currentPhoto].classList.add('active');
+        }
+    }
+    
+);
+
+
+arrowDown.addEventListener('click',
+    function() {
+        if (currentPhoto != 4) {
+            photo[currentPhoto].classList.remove('active');
+            photoSmall[currentPhoto].classList.remove('active');
+            currentPhoto = currentPhoto + 1;
+            photo[currentPhoto].classList.add('active');
+            photoSmall[currentPhoto].classList.add('active');
+        } else {
+            photo[currentPhoto].classList.remove('active');
+            photoSmall[currentPhoto].classList.remove('active');
+            currentPhoto = 0;
+            photo[currentPhoto].classList.add('active');
+            photoSmall[currentPhoto].classList.add('active');
+        }
+    }
+);
+
