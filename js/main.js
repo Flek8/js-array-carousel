@@ -47,10 +47,10 @@ photoContainer.innerHTML = image;
 let itemsContainer = document.querySelector('.items-container');
 itemsContainer.innerHTML = thumbnail;
 
-let currentPhoto = 3;
+let currentPhoto = 1;
 
 let photo = document.getElementsByClassName('photo');
-photo[3].classList.add('active');
+photo[1].classList.add('active');
 
 let photoSmall = document.getElementsByClassName('item');
-photoSmall[3].classList.add('active');
+photoSmall[1].classList.add('active');
